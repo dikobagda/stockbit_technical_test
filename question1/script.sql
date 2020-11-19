@@ -40,4 +40,4 @@ Tuliskan SQL Query untuk mendapatkan data berisi:
 SELECT stu.ID, stu.UserName, sta.UserName as ParentUserName
 FROM stockbit_user stu
 LEFT JOIN stockbit_user sta ON (sta.ID = stu.Parent)
-ORDER by ID
+ORDER by stu.ID
