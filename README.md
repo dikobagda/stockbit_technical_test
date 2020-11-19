@@ -6,6 +6,7 @@ Kolom ID adalah Primary Key
 Kolom UserName adalah Nama User
 Kolom Parent adalah ID dari User yang menjadi Creator untuk User tertentu.
 eg.
+```
 ——————————————————————————
 | ID | UserName | Parent |
 ——————————————————————————
@@ -21,6 +22,7 @@ Tuliskan SQL Query untuk mendapatkan data berisi:
 | 2  | Budi     |     NULL       |
 | 3  | Cecep    |     Ali        |
 ——————————————————————————————————
+```
 *Kolom ParentUserName adalah UserName berdasarkan value Parent
 
 ### Question #2 :
