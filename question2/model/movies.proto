@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package model;
+
+message ResponseOmdbApi {
+    Movies Data         = 1;
+	string TotalResults = 2;
+	string Response     = 3;
+}
+
+message Movies {
+    string Title = 1;
+    string Year = 2;
+    string ImdbID = 3;
+    string Type = 4;
+    string Poster = 5;
+}
