@@ -29,19 +29,21 @@ func (s sortRunes) Len() int {
 	return len(s)
 }
 
+// SortString : convert string to rune type then sorting it
 func SortString(s string) string {
 	r := []rune(s)
 	sort.Sort(sortRunes(r))
 	return string(r)
 }
 
+// FindRepeatitionWord : convert same word into map
 func FindRepeatitionWord(str []string) map[string]int {
 	repeat := make(map[string]int)
 
 	for _, word := range str {
 		_, matched := repeat[word]
 		if matched {
-			repeat[word] += 1
+			repeat[word]++
 		} else {
 			repeat[word] = 1
 		}
@@ -63,7 +65,7 @@ func main() {
 	strToMap := FindRepeatitionWord(result)
 
 	// mapping to slice
-	for key, _ := range strToMap {
+	for key := range strToMap {
 		var temp []string
 		for i := 0; i < len(strArr); i++ {
 			if key == result[i] {
