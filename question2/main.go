@@ -23,7 +23,7 @@ type movies model.Movies
 func main() {
 	runtime.GOMAXPROCS(2)
 
-	router := setupServer()
+	router := setupRouter()
 
 	stopChan := make(chan os.Signal)
 	signal.Notify(stopChan, os.Interrupt, os.Kill)
@@ -40,7 +40,7 @@ func main() {
 	log.Fatal("Shutting Down Server...")
 }
 
-func setupServer() *mux.Router {
+func setupRouter() *mux.Router {
 	router := mux.NewRouter()
 	router.HandleFunc("/api/movies/{keyword}", usecase.HandlerMovies).Methods("GET")
 	router.HandleFunc("/api/movies/{keyword}/page/{page}", usecase.HandlerMovies).Methods("GET")

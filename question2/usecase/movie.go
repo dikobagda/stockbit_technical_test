@@ -17,10 +17,6 @@ const (
 	APIKEY  = "faf7e5bb"
 )
 
-var (
-	address = ":9000"
-)
-
 type responseMovies model.ResponseMovies
 type movies model.Movies
 
@@ -106,7 +102,7 @@ func HandlerMovies(w http.ResponseWriter, r *http.Request) {
 			"status":  status,
 			"message": err,
 		})
-		fmt.Println("💔💔💔 API [GetMovies] Failed to load. errorMessage : ", err)
+		fmt.Println("💔💔💔 API [GetMovies] Succesfully load with error. errorMessage : ", err)
 	} else {
 		json.NewEncoder(w).Encode(map[string]interface{}{
 			"status":  status,
@@ -130,7 +126,7 @@ func HandlerMovieByID(w http.ResponseWriter, r *http.Request) {
 			"status":  status,
 			"message": err,
 		})
-		fmt.Println("💔💔💔 API [GetMovieByID] Failed to load. errorMessage : ", err)
+		fmt.Println("💔💔💔 API [GetMovieByID] Succesfully load with error. errorMessage : ", err)
 	} else {
 		json.NewEncoder(w).Encode(map[string]interface{}{
 			"status":  status,
