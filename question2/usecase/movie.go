@@ -75,11 +75,14 @@ func (res movies) GetMovieByID(param1 string) (model.Movies, string) {
 	}
 
 	movies := model.Movies{
-		Title:  res.Title,
-		Year:   res.Year,
-		ImdbID: res.ImdbID,
-		Type:   res.Type,
-		Poster: res.Poster,
+		Title:    res.Title,
+		Year:     res.Year,
+		ImdbID:   res.ImdbID,
+		Type:     res.Type,
+		Poster:   res.Poster,
+		Rated:    res.Rated,
+		Released: res.Released,
+		Runtime:  res.Runtime,
 	}
 
 	return movies, res.Error
